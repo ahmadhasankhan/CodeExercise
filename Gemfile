@@ -45,3 +45,5 @@ group :development do
   gem 'spring'
 end
 
+# Inline Page Editor
+gem 'mercury-rails', git: 'https://github.com/jejacks0n/mercury'
