@@ -450,3 +450,13 @@ window.Mercury = {
   debug: false
 
 };
+
+jQuery(window).on('mercury:ready', function() {
+    var link = $('#edit_link');
+    Mercury.saveUrl =link.attr('data-save-url');
+    link.hide();
+});
+
+jQuery(window).on('mercury:saved', function() {
+    window.location = window.location.href.replace(/\/editor\//i, '/');
+});

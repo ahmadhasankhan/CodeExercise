@@ -61,14 +61,27 @@ class PostsController < ApplicationController
     end
   end
 
-  private
-    # Use callbacks to share common setup or constraints between actions.
-    def set_post
-      @post = Post.find(params[:id])
+  def mercury_update
+    post = Post.find(params[:id])
+    if post
+      post.title = params[:content][:post_title][:value]
+      post.text = params[:content][:post_body][:value]
+      post.save!
+      flash[:notice] = 'Post was successfully saved'
+      render text: ""
+    else
+      format.html { redirect_to posts_url, notice: 'Post was no found.' }
     end
+  end
 
-    # Never trust parameters from the scary internet, only allow the white list through.
-    def post_params
-      params.require(:post).permit(:title, :text, :user_id)
-    end
+  private
+  # Use callbacks to share common setup or constraints between actions.
+  def set_post
+    @post = Post.find(params[:id])
+  end
+
+  # Never trust parameters from the scary internet, only allow the white list through.
+  def post_params
+    params.require(:post).permit(:title, :text, :user_id)
+  end
 end

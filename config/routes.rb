@@ -7,7 +7,7 @@ Rails.application.routes.draw do
 
 
   resources :posts do
-    member { post :mercury_update }
+    member { put :mercury_update }
   end
 
   # The priority is based upon order of creation: first created -> highest priority.
