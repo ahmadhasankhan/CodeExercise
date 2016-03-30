@@ -12,6 +12,8 @@
 //
 //= require jquery
 //= require jquery_ujs
+//= require bootstrap
 //= require turbolinks
 //= require mercury
 
+setTimeout("$('.error_msgs').fadeOut('slow')", 3000)
