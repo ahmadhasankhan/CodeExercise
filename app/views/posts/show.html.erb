@@ -1,0 +1,11 @@
+<h1>
+    <span id="post_title_#{post.id}" class="mercury-region" data-mercury="full">
+        <%= raw @post.title %>
+    </span>
+</h1>
+
+<div data-mercury="full" id="post_body_#{post.id}">
+    <%= raw @post.text %>
+</div>
+
+<p><%= link_to "Edit Page", "/editor" + request.path, id: "edit_link", data: {save_url: mercury_update_post_path(@post)} %></p>

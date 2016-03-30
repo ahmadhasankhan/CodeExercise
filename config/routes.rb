@@ -1,7 +1,15 @@
 Rails.application.routes.draw do
 
-  devise_for :users
+
   mount Mercury::Engine => '/'
+  resources :posts
+  devise_for :users
+
+
+  resources :posts do
+    member { post :mercury_update }
+  end
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
