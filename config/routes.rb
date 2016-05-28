@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
 
-
+  resources :rovers
   mount Mercury::Engine => '/'
   resources :posts
   devise_for :users

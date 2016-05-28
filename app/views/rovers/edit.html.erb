@@ -1,0 +1,23 @@
+<h1>Send Commands To Rover</h1>
+
+<%= form_tag({:controller => "rovers", :action => "update"}, :method => "PATCH") do %>
+    <% if @rover.errors.any? %>
+        <div id="error_explanation">
+            <h2><%= pluralize(@rover.errors.count, "error") %> prohibited this rover from being saved:</h2>
+            <ul>
+                <% @rover.errors.full_messages.each do |message| %>
+                    <li><%= message %></li>
+                <% end %>
+            </ul>
+        </div>
+    <% end %>
+
+    <div class="field">
+        Commands<br>
+        <%= text_field_tag :commands %>
+    </div>
+    <div class="actions">
+        <%= submit_tag %>
+    </div>
+<% end %>
+<%= link_to 'Back', rovers_path %>

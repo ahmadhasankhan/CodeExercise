@@ -37,6 +37,9 @@ group :development, :test do
   gem 'byebug'
   # Use mysql as the database for Active Record
   gem 'mysql2', '>= 0.3.13', '< 0.5'
+  gem 'rspec-rails'
+  gem 'spring-commands-rspec'
+  gem 'factory_girl_rails'
 end
 
 group :development do
@@ -45,6 +48,10 @@ group :development do
 
   # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
   gem 'spring'
+end
+
+group :test do
+  gem 'capybara'
 end
 
 # Inline Page Editor

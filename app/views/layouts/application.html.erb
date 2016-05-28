@@ -15,7 +15,8 @@
         <div id="navbar">
             <ul class="nav navbar-nav">
                 <li><%= link_to 'Home', root_path %></li>
-                <li><%= link_to 'Blog', posts_path %></li>
+                <li><%= link_to 'Travel Tripper', posts_path %></li>
+                <li><%= link_to 'Treniq', rovers_path %></li>
             </ul>
             <ul class="nav navbar-nav pull-right">
                 <% if user_signed_in? %>
@@ -41,7 +42,8 @@
     <% flash.each do |key, value| %>
         <span class="error_msgs">
             <div class="alert alert-<%= key %>">
-                <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                    <span aria-hidden="true">&times;</span></button>
                 <%= value %>
             </div>
         </span>

@@ -1,0 +1,22 @@
+<p>
+  <strong>Name:</strong>
+  <%= @rover.name %>
+</p>
+
+<p>
+  <strong>Position x:</strong>
+  <%= @rover.position_x %>
+</p>
+
+<p>
+  <strong>Position y:</strong>
+  <%= @rover.position_y %>
+</p>
+
+<p>
+  <strong>Direction:</strong>
+  <%= @rover.direction %>
+</p>
+
+<%= link_to 'Edit', edit_rover_path(@rover) %> |
+<%= link_to 'Back', rovers_path %>
